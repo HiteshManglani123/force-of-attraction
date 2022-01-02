@@ -2,7 +2,7 @@ let attractors = []
 let particles = []
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(windowWidth, windowHeight);
   for (let i = 0; i < 500; i++) {
     particles.push(new Particle(random(width),               random(height)))
   }
@@ -10,6 +10,10 @@ function setup() {
 
 function mousePressed() {
   attractors.push(createVector(mouseX, mouseY))
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
