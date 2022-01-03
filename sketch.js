@@ -71,6 +71,7 @@ function draw() {
   
   for (let key in attractors) {
     attractors[key].show()
+    console.log(attractor)
     attractors[key].update(attractors)
   }
 
