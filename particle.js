@@ -16,7 +16,6 @@ function Particle(x, y, weight, r) {
   this.show = function() {
     stroke(255)
     strokeWeight(2)
-    // line(this.pos.x, this.pos.y, this.prev.x, this.prev.y)
     ellipse(this.pos.x, this.pos.y, r)
     
     this.prev.x = this.pos.x;
@@ -24,21 +23,12 @@ function Particle(x, y, weight, r) {
   }
 
   this.attracted = function(target) {
-    let force = p5.Vector.sub(target.pos, this.pos);
-    let d = force.magSq();
-    d = constrain(d, 5, 25)
-    let G = 0.005;
-    let strength = G * (target.weight * this.weight) / d;
-    force.setMag(strength);
-    this.acc.add(force);
+    let force = getForce(this, target, 'attract')
+    this.acc.add(force)
   }
+  
   this.blast = function(target) {
-    let force = p5.Vector.sub(target.pos, this.pos);
-    let d = force.magSq();
-    d = constrain(d, 5, 25)
-    let G = 0.005;
-    let strength = (G * (target.weight * this.weight) / d) * -1;
-    force.setMag(strength);
-    this.acc.add(force);
+    let force = getForce(this, target, 'repulse')
+    this.acc.add(force)
   }
 }
