@@ -5,6 +5,7 @@ function Attractor(x, y, weight, r, velVector) {
   this.acc = createVector();
   this.r = r
   
+  // updates attractor map as well
   this.update = function(attractors) {
     let prevPos = this.pos
     let key = `${prevPos.x}-${prevPos.y}`;  
