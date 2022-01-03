@@ -32,4 +32,13 @@ function Particle(x, y, weight, r) {
     force.setMag(strength);
     this.acc.add(force);
   }
+  this.blast = function(target) {
+    let force = p5.Vector.sub(target.pos, this.pos);
+    let d = force.magSq();
+    d = constrain(d, 5, 25)
+    let G = 0.005;
+    let strength = (G * (target.weight * this.weight) / d) * -1;
+    force.setMag(strength);
+    this.acc.add(force);
+  }
 }
