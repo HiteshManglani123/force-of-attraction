@@ -23,7 +23,7 @@ function initSketch() {
   resetObjects()
   
   const widthCenter = floor(windowWidth / 2);
-  const heightCenter = floor(windowHeight / 2);
+  const heightCenter = floor(windowWidth / 2);
   
   let initialAttractor = new Attractor(widthCenter, heightCenter, 25, 20, createVector())
   
