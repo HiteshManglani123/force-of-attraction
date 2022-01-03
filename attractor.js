@@ -7,13 +7,11 @@ function Attractor(x, y, weight, r, velVector) {
   
   // updates attractor map as well
   this.update = function(attractors) {
+    console.log(attractors)
     let prevPos = this.pos
     let key = `${prevPos.x}-${prevPos.y}`;  
-    let attractor;
-    if (key in attractors) {
-          attractor = attractors[key]
-          delete attractors[key];
-    }
+    let attractor = attractors[key]
+    delete attractors[key];
     
     this.vel.add(this.acc);
     this.pos.add(this.vel);
