@@ -8,8 +8,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   attractors.push(new Attractor(windowWidth / 2, windowHeight / 2, 10, 20, createVector()))
   
-  for (let i = 0; i < windowWidth; i += 20) {
-    for (let j = 100; j < windowHeight; j+= 20) {
+  for (let i = 0; i < windowWidth; i += 40) {
+    for (let j = 100; j < windowHeight; j+= 40) {
           particles.push(new Particle(i, j, 5, 3));
     }
   }
