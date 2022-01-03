@@ -9,7 +9,7 @@ let id = 0
 function setup() {
   createCanvas(windowWidth, windowHeight);
   const widthCenter = floor(windowWidth / 2);
-  const heightCenter = floor(windowWidth / 2);
+  const heightCenter = floor(windowHeight / 2);
   
   let initialAttractor = new Attractor(widthCenter, heightCenter, 10, 20, createVector())
   
